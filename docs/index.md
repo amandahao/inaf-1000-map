@@ -46,6 +46,21 @@ toc: false
     flex-direction: column;
     align-items: center;
   }
+
+  .colors {
+    display: flex;
+    flex-direction: row;
+    /* padding: 2px; */
+  }
+
+  .colors input {
+    width: 30px;
+  }
+
+  /* hides hex codes */
+  .colors output {
+    display: none;
+  }
 </style>
 
 <div class="hero">
@@ -58,6 +73,12 @@ toc: false
   <br>
   <div id="graticule"></div>
   <br>
+  <div class="colors">
+    <div id="default"></div>
+    <div id="selected"></div>
+    <div id="land"></div>
+  </div>
+  <br>
   <div id="map"></div>
 </dive>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
@@ -68,6 +89,9 @@ import define from "https://api.observablehq.com/d/1571aba8dc93dbb7.js?v=4";
 new Runtime().module(define, name=> {
   if(name =="viewof diameter") return new Inspector(document.querySelector("#slider"));
   if(name =="viewof showGraticule") return new Inspector(document.querySelector("#graticule"));
+  if(name =="viewof defaultColor") return new Inspector(document.querySelector("#default"));
+  if(name =="viewof selectedColor") return new Inspector(document.querySelector("#selected"));
+  if(name =="viewof landColor") return new Inspector(document.querySelector("#land"));
   if(name !="projection") return new Inspector(document.querySelector("#map"));
 })
 
