@@ -48,9 +48,10 @@ toc: false
   }
 
   .colors {
-    display: flex;
-    flex-direction: row;
-    /* padding: 2px; */
+    /* display: flex; */
+    /* flex-direction: row; */
+    padding: 2px;
+    margin-left: 190px;
   }
 
   .colors input {
@@ -60,6 +61,10 @@ toc: false
   /* hides hex codes */
   .colors output {
     display: none;
+  }
+
+  .colors div .oi-3a86ea {
+    /* --label-width: 0px !important; */
   }
 </style>
 
