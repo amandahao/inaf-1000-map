@@ -66,6 +66,11 @@ toc: false
   .colors div .oi-3a86ea {
     /* --label-width: 0px !important; */
   }
+
+  #reset {
+    padding-top: 5px;
+    color: blue;
+  }
 </style>
 
 <div class="hero">
@@ -82,7 +87,10 @@ toc: false
     <div id="default"></div>
     <div id="selected"></div>
     <div id="land"></div>
+    <div id="reset"></div>
   </div>
+  <br>
+  <div id="toggle"></div>
   <br>
   <div id="map"></div>
 </dive>
@@ -97,6 +105,8 @@ new Runtime().module(define, name=> {
   if(name =="viewof defaultColor") return new Inspector(document.querySelector("#default"));
   if(name =="viewof selectedColor") return new Inspector(document.querySelector("#selected"));
   if(name =="viewof landColor") return new Inspector(document.querySelector("#land"));
+  if(name =="viewof reset") return new Inspector(document.querySelector("#reset"));
+  if(name =="viewof toggleShading") return new Inspector(document.querySelector("#toggle"));
   if(name !="projection") return new Inspector(document.querySelector("#map"));
 })
 
